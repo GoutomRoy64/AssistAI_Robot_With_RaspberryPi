@@ -1,4 +1,3 @@
-AssistAI_Robot
 AssistAI is a smart, interactive voice assistant built to run on a Raspberry Pi 4B.It features facial recognition to greet users by name, bilingual (English and Bengali) conversational abilities, and an animated face for expressive interactions.
 
 This project combines hardware and software to create a friendly, helpful companion robot. It's designed to be modular and extensible, making it a great platform for further development in robotics and artificial intelligence.
