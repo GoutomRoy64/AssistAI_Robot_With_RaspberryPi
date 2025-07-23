@@ -1,5 +1,5 @@
 AssistAI_Robot
-AssistAI is a smart, interactive voice assistant built to run on a Raspberry Pi 4B. P It features facial recognition to greet users by name, bilingual (English and Bengali) conversational abilities, and an animated face for expressive interactions.
+AssistAI is a smart, interactive voice assistant built to run on a Raspberry Pi 4B.It features facial recognition to greet users by name, bilingual (English and Bengali) conversational abilities, and an animated face for expressive interactions.
 
 This project combines hardware and software to create a friendly, helpful companion robot. It's designed to be modular and extensible, making it a great platform for further development in robotics and artificial intelligence.
 
@@ -16,7 +16,7 @@ Smart Acknowledgement: Provides instant feedback when a complex question is aske
 
 Interruptible Speech: The robot can be interrupted mid-sentence with a stop command.
 
-Servo Control: Integrates with an Arduino to control servos for physical movements corresponding to the animated face's state.
+Servo Control: Integrates with an Arduino to control servos for physical gestures like waving and thinking.
 
 Modular Codebase: The project is organized into logical modules for easy understanding and modification.
 
@@ -41,17 +41,18 @@ A fresh installation of Raspberry Pi OS.
 
 Python 3.7 or higher.
 
+Arduino IDE to upload the sketch to the Arduino board.
+
 2. Clone the Repository
 Open a terminal on your Raspberry Pi and clone this repository:
 
 git clone [https://github.com/GoutomRoy64/AssistAI_Robot_With_RaspberryPi.git](https://github.com/GoutomRoy64/AssistAI_Robot_With_RaspberryPi.git)
 
 
-3. Install Dependencies
+3. Install Python Dependencies
 Install all the required Python libraries using the requirements.txt file.
 
 pip install -r requirements.txt
-
 
 4. Set Up Google Gemini API Key
 Your Gemini API key must be kept secure and should not be hardcoded.
@@ -66,7 +67,16 @@ GEMINI_API_KEY="AIzaSy...Your...Key"
 
 Save the file (Ctrl+X, Y, Enter). The AI_Handler.py script is already set up to load this key securely.
 
-5. Capture Faces for Recognition
+5. Upload Code to Arduino
+Open the Arduino_Code/AssistAI_Servos.ino sketch in the Arduino IDE.
+
+Connect your Arduino Uno to your computer.
+
+Select the correct board and port from the Tools menu.
+
+Click the "Upload" button to flash the code to the Arduino.
+
+6. Capture Faces for Recognition
 To recognize you, the robot needs pictures of your face.
 
 Create a directory for your face inside known_faces/:
@@ -81,7 +91,7 @@ python Software/capture_faces.py
 
 Look at the camera. The script will save 20 images of your face and then quit.
 
-6. Train the Face Recognition Model
+7. Train the Face Recognition Model
 After capturing faces, you need to train the model. The main script does this automatically if a model doesn't exist, but you can also run the training process manually by adapting the train() method in Face_Recognition.py.
 
 🚀 Usage
@@ -106,6 +116,9 @@ AssistAI-RaspberryPi/
 ├── README.md               # This file.
 ├── requirements.txt        # List of Python dependencies.
 ├── .env                    # Secure file for API keys (you must create this).
+│
+├── Hardware/Arduino_Code/         
+│   └── AssistAI_Servos.ino       # Folder for the Arduino sketch.
 │
 ├── known_faces/            # Directory to store face images for training.
 │   └── YourName/
