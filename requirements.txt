@@ -1,0 +1,17 @@
+# For speech recognition
+SpeechRecognition
+pyaudio
+
+# For AI and language processing
+google-generativeai
+gTTS
+deep-translator
+googletrans==4.0.0-rc1
+
+# For hardware communication and media
+pyserial
+pygame
+
+# For computer vision (face recognition)
+opencv-contrib-python
+numpy
